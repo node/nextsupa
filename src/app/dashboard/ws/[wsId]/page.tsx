@@ -141,7 +141,7 @@ export default function WorkspacePage({ params }: { params: { wsId: string } }) 
             ))}
           </ul>
         ) : (
-          <p>This workspace doesn't have any projects yet.</p>
+          <p>This workspace doesn&apos;t have any projects yet.</p>
         )}
       </div>
     </div>
