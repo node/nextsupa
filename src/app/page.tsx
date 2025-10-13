@@ -32,12 +32,17 @@ export default function Home() {
           {user ? (
             <div>
               <p className="text-xl">You are signed in as {user.email}</p>
-              <button
-                onClick={handleSignOut}
-                className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
-              >
-                Sign Out
-              </button>
+              <div className="mt-4">
+                <Link href="/dashboard" className="px-4 py-2 bg-green-500 text-white rounded mr-4">
+                    Go to Dashboard
+                </Link>
+                <button
+                  onClick={handleSignOut}
+                  className="px-4 py-2 bg-red-500 text-white rounded"
+                >
+                  Sign Out
+                </button>
+              </div>
             </div>
           ) : (
             <div>
