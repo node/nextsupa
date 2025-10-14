@@ -83,7 +83,7 @@ export default function Dashboard() {
             ))}
           </ul>
         ) : (
-          <p>You don't have any workspaces yet.</p>
+          <p>You don&apos;t have any workspaces yet.</p>
         )}
       </div>
     </div>
