@@ -19,6 +19,15 @@ export default function SignIn() {
     }
   }
 
+  const handleSignInWithGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    })
+    if (error) {
+      alert(error.message)
+    }
+  }
+
   return (
     <div className="flex justify-center items-center h-screen">
       <form onSubmit={handleSignIn} className="p-8 border rounded-lg shadow-lg">
@@ -39,6 +48,13 @@ export default function SignIn() {
         />
         <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded">
           Sign In
+        </button>
+        <div className="my-4 text-center">or</div>
+        <button
+          onClick={handleSignInWithGoogle}
+          className="w-full p-2 bg-red-500 text-white rounded"
+        >
+          Sign In with Google
         </button>
       </form>
     </div>
