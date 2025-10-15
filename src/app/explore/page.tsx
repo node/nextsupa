@@ -10,7 +10,7 @@ type Project = {
   author_id: string;
   profiles: {
     username: string;
-  } | null;
+  }[] | null;
 };
 
 export default function ExplorePage() {
@@ -34,7 +34,7 @@ export default function ExplorePage() {
       if (error) {
         console.error('Error fetching public projects:', error)
       } else {
-        setProjects(data)
+        setProjects(data as Project[])
       }
       setLoading(false)
     }
@@ -55,7 +55,7 @@ export default function ExplorePage() {
               <div key={proj.id} className="p-4 border rounded-lg shadow">
                 <h3 className="text-xl font-bold">{proj.name}</h3>
                 <p className="text-sm text-gray-500 mb-2">
-                  by {proj.profiles?.username || 'Unknown'}
+                  by {proj.profiles?.[0]?.username || 'Unknown'}
                 </p>
                 <p>{proj.description}</p>
               </div>
